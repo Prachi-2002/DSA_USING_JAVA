@@ -1,0 +1,41 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package Stack;
+
+class Stack {
+   private Node head = null;
+
+   public Stack() {
+   }
+
+   public void push(int var1) {
+      Node var2 = new Node(var1);
+      var2.next = this.head;
+      this.head = var2;
+      System.out.println("Pushed: " + var1);
+   }
+
+   public int pop() {
+      if (this.isEmpty()) {
+         System.out.println("Stack underflow");
+         return -1;
+      } else {
+         int var1 = this.head.data;
+         this.head = this.head.next;
+         System.out.println("Popped: " + var1);
+         return var1;
+      }
+   }
+
+   public int peek() {
+      if (this.isEmpty()) {
+         System.out.println("Stack is empty");
+         return -1;
+      } else {
+         return this.head.data;
+      }
+   }
+
+   public boolean isEmpty() {
+      return this.head == null;
+   }
+}
