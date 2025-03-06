@@ -58,6 +58,10 @@ class BST {
         inOrderTraversal(root.right);
     } 
 
+    static TreeNode deleteTreeNode(TreeNode root, int value){
+        
+    }
+
 }
 public class BinarySearchTree {
     
