@@ -13,6 +13,7 @@ public class MergeSort {
         // int mid  =  (left + right)/2;
 
         // merge(arr, n)
+        return new int []{0};
         // while(left <= )
     }
 
