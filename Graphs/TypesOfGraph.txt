@@ -1,0 +1,76 @@
+==============================
+       TYPES OF GRAPHS
+==============================
+
+REAL-WORLD ANALOGY:
+--------------------
+Think of a graph like a city map:
+- Cities = Nodes (Vertices)
+- Roads/Flights = Edges
+- One-way roads = Directed Graph
+- Two-way roads = Undirected Graph
+- Routes with tolls/distances = Weighted Graph
+
+======================================================================
+| Type                    | Description                              |
+|-------------------------|-------------------------------------------|
+| Undirected Graph        | Edges have no direction                   |
+| Directed Graph          | Edges have direction (A ➝ B ≠ B ➝ A)      |
+| Weighted Graph          | Each edge has a cost/weight               |
+| Unweighted Graph        | No weights on edges                       |
+| Cyclic Graph            | Graph contains at least one cycle         |
+| Acyclic Graph           | No cycles present                         |
+| Connected Graph         | All nodes reachable from one another      |
+| Disconnected Graph      | Some nodes cannot be reached              |
+| Complete Graph          | Every node connected to every other node  |
+| Sparse Graph            | Few edges compared to possible edges      |
+| Dense Graph             | Many edges (near complete)                |
+| Tree                    | Acyclic connected graph (N nodes, N-1 edges)|
+| Forest                  | Collection of disjoint trees              |
+| DAG (Directed Acyclic)  | Directed with no cycles (e.g., tasks)     |
+| Multigraph              | Multiple edges between same vertices      |
+| Bipartite Graph         | Nodes split into 2 groups; edges go across|
+======================================================================
+
+EXAMPLES:
+---------
+- Undirected Graph       => Facebook friendships
+- Directed Graph         => Twitter follows
+- Weighted Graph         => Google Maps (distances)
+- DAG                   => Task dependency system
+- Bipartite Graph        => Jobs assigned to workers
+
+GRAPH REPRESENTATION IN JAVA:
+------------------------------
+1. Adjacency List (good for sparse graphs):
+
+   Map<Integer, List<Integer>> graph = new HashMap<>();
+
+2. Adjacency Matrix (good for dense graphs):
+
+   int[][] graph = new int[n][n]; // 0 = no edge, weight = edge weight
+
+EDGE ADDITION EXAMPLE (UNDIRECTED):
+-----------------------------------
+void addEdge(Map<Integer, List<Integer>> graph, int u, int v) {
+    graph.computeIfAbsent(u, k -> new ArrayList<>()).add(v);
+    graph.computeIfAbsent(v, k -> new ArrayList<>()).add(u); // For undirected
+}
+
+TIME & SPACE COMPLEXITY:
+-------------------------
+| Representation     | Time to Check Edge | Space Complexity | Best For      |
+|--------------------|--------------------|------------------|---------------|
+| Adjacency Matrix   | O(1)               | O(V^2)           | Dense graphs  |
+| Adjacency List     | O(V + E) traversal | O(V + E)         | Sparse graphs |
+
+V = number of vertices
+E = number of edges
+
+NEXT STEP?
+----------
+Explore Traversals:
+- BFS (Breadth-First Search)
+- DFS (Depth-First Search)
+
+

@@ -1,0 +1,3 @@
+What is heap ?
+
+Heaps is a complete binary tree and it has heap order property.'
